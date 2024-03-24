@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 0px 5% 0px;
+  padding: 0px 10% 5%;
   background-color: #0b0c10;
 }
 div {
@@ -15,6 +15,11 @@ div {
 .flex-start {
   display: flex;
   justify-content: space-between;
+}
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
 }
 .big-title {
   margin: 0px;
@@ -42,7 +47,7 @@ div {
   align-items: center;
 }
 .avatar_img {
-  width: 30vw;
+  width: 35vw;
   background-size: cover;
   display: block;
   border-radius:50%;
@@ -85,7 +90,7 @@ div {
 .title-section {
   font-size: 5vw;
   color: #57B8D7;
-  float: left;
+  display: block;
   
 }
 .edu-title {
@@ -114,5 +119,18 @@ div {
   margin: 0px;
   padding: 0px;
   color: grey;
+  font-size: 1.5vw;
   text-align: center;
+}
+.about-me {
+  background-color: #C5C6C7;
+  height: 20vw;
+  font-size: 3vw;
+}
+.footer_title {
+  color: #FFFFFF;
+  font-size: 3vw;
+}
+.img-icon {
+  width: 5vw;
 }
