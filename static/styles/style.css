@@ -48,6 +48,7 @@ div {
 }
 .avatar_img {
   width: 35vw;
+  height: 35vw;
   background-size: cover;
   display: block;
   border-radius:50%;
@@ -133,4 +134,5 @@ div {
 }
 .img-icon {
   width: 5vw;
+  height: 5vw;
 }
