@@ -17,6 +17,11 @@ div {
   justify-content: space-between;
 }
 
+.writers-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .flex-around {
   display: flex;
   justify-content: space-around;
@@ -94,13 +99,13 @@ div {
   display: block;
   
 }
-.edu-title {
+.edu-container_edu-title {
   text-align: center;
   font-size: 3vw;
   color: #63FCF1;
   margin-bottom: 0px;
 }
-.edu-text {
+.edu-container_edu-text {
   font-size: 2vw;
   color: #63FCF1;
   text-align: center;
@@ -116,14 +121,14 @@ div {
   justify-content: space-around;
   flex-direction: row;
 }
-.date {
+.edu-container_date {
   margin: 0px;
   padding: 0px;
   color: grey;
   font-size: 1.5vw;
   text-align: center;
 }
-.about-me {
+.about-me-container {
   background-color: #C5C6C7;
   height: 20vw;
   font-size: 3vw;
@@ -136,6 +141,9 @@ div {
   width: 5vw;
   height: 5vw;
 }
+.edu-container {
+  
+}
 
 @media (max-width: 768px) {
   .flex-start {
@@ -144,4 +152,17 @@ div {
     flex-wrap: wrap;
     align-items: center;
   }
+  .writers-container {
+    flex-direction: column-reverse;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .edu-rows {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
 }
