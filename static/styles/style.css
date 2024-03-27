@@ -108,9 +108,7 @@ div {
 .edu-container_edu-text {
   font-size: 2vw;
   color: #63FCF1;
-  text-align: center;
-
-  
+  text-align: center;  
 }
 .edu-section {
   display: flex;
@@ -143,6 +141,9 @@ div {
 }
 .edu-container {
   
+}
+.about-me-container {
+
 }
 
 @media (max-width: 768px) {
