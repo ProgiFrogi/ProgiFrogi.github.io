@@ -167,3 +167,9 @@ div {
   }
 
 }
+
+@media print {
+  body {
+    color: black;
+  }
+}
