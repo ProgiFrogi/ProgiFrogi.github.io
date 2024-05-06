@@ -407,7 +407,7 @@ div {
   }
   .popup__close-button {
       top: 200%;
-      right: -100%;
+      right: -200%;
       width: 400px;
       height: 40px;
       z-index: 10;
