@@ -9,7 +9,7 @@ div {
 }
 
 .margin-block {
-  margin: 5vw 0vw 5vw;
+  margin: 5vw 2vw 5vw;
 }
 
 .flex-start {
@@ -90,8 +90,13 @@ div {
 .oval-element_a {
   display: inline-block;
   color: #66FCF1;
+  position: relative;
   font-size: 2vw;
   text-decoration-line:unset;
+  transition: 0.3s;
+}
+.oval-element_a:hover {
+  scale: 1.2;
 }
 .title-section {
   font-size: 5vw;
@@ -145,7 +150,140 @@ div {
 .about-me-container {
 
 }
+.cards__list {
+  gap: 20px 17px;
+}
+.cards__card {
+  height: 35vw;
+  width: 20vw;
+  border-radius: 10px;
+  overflow: hidden;
+  display: inline-block;
+  transition: 0.3s;
+}
+.cards__card:hover {
+  scale: 1.05;
+}
+.cards__img {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  object-fit: cover;
+}
+.footer__contacts {
+  margin: 20px auto 5px;
+  height: 5vw;
+  width: 18vw;
+  border: 2px solid #63FCF1;
+  border-radius: 6px;
+  background-color: darkblue;
+  transition: 0.5s;
 
+}
+.footer__contacts-h1 {
+  color: #63FCF1;
+  font-size: 4vw;
+  display: inline;
+  margin: 0 auto 0;
+  margin-left: 1.5vw;
+}
+
+.footer__contacts:hover {
+  scale: 1.05;
+
+}
+.popup__container {
+    margin: 0;
+    padding: 34px 36px 37px;
+    width: 430px;
+
+    position: relative;
+
+    z-index: 1;
+
+    box-sizing: border-box;
+
+    background: white;
+    border-radius: 10px;
+
+    scale: 0.2;
+
+    transition: 0.3s;
+}
+
+.popup__container_gallery {
+    padding: 0;
+
+    background: transparent;
+}
+
+.popup__prev-button {
+  margin: 0;
+  padding: 0;
+
+  width: 32px;
+  height: 32px;
+
+  position: absolute;
+  top: 44%;
+  right: 102%;
+
+  cursor: pointer;
+
+  background: transparent url(../../../images/left-button.png) no-repeat center;
+  background-size: contain;
+  scale: 1.75;
+
+  outline: none;
+  border: none;
+}
+
+.popup__prev-button:hover {
+  opacity: 0.6;
+}
+.popup__prev-button_disabled {
+  visibility: hidden;
+}
+
+.popup__container_opened {
+    scale: 1;
+}
+.popup__next-button {
+  margin: 0;
+  padding: 0;
+
+  width: 32px;
+  height: 32px;
+
+  position: absolute;
+  top: 44%;
+  right: -40px;
+
+  cursor: pointer;
+
+  background: transparent url(../../../images/right-button.png) no-repeat center;
+  background-size: contain;
+  scale: 1.75;
+
+  outline: none;
+  border: none;
+}
+
+.popup__next-button:hover {
+  opacity: 0.6;
+}
+.popup__next-button_disabled {
+  visibility: hidden;
+}
+.popup_opened {
+  opacity: 1;
+
+  scale: 1;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  visibility: visible;
+}
 @media (max-width: 768px) {
   .flex-start {
     flex-direction: column-reverse;
@@ -165,7 +303,31 @@ div {
     flex-wrap: wrap;
     align-items: center;
   }
+  .popup__container {
+    padding: 25px 22px;
 
+    width: 282px;
+  } 
+
+.popup__container_gallery {
+    padding: 0;
+  }
+  .popup__next-button {
+    width: 20px;
+    height: 20px;
+
+    right: 5px;
+
+    background-size: 20px;
+  }
+  .popup__prev-button {
+    width: 20px;
+    height: 20px;
+
+    right: 91%;
+
+    background-size: 20px;
+}
 }
 
 @media print {
