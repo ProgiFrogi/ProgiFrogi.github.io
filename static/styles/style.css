@@ -7,6 +7,29 @@ div {
   margin: 0;
   padding: 0;
 }
+.popup {
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0);
+
+  /* Эти параметры нужны, чтобы скрыть popup, т.к. еще не написаны js-компоненты */
+  visibility: hidden;
+  opacity: 0;
+
+  transition: 0.3s;
+}
 
 .margin-block {
   margin: 5vw 2vw 5vw;
@@ -194,10 +217,15 @@ div {
 }
 .popup__container {
     margin: 0;
-    padding: 34px 36px 37px;
-    width: 430px;
+
+    width: 20vw;
+    height: 20vw;
 
     position: relative;
+    transform: translate(-50%, -50%);
+    top: 20%;
+    left: 10%;
+
 
     z-index: 1;
 
@@ -213,7 +241,6 @@ div {
 
 .popup__container_gallery {
     padding: 0;
-
     background: transparent;
 }
 
@@ -221,16 +248,16 @@ div {
   margin: 0;
   padding: 0;
 
-  width: 32px;
-  height: 32px;
+  width: 3vw;
+  height: 2vw;
 
   position: absolute;
-  top: 44%;
-  right: 102%;
+  top: 55%;
+  right: 110%;
 
   cursor: pointer;
 
-  background: transparent url(../../../images/left-button.png) no-repeat center;
+  background: transparent url(../images/gallery/left-button.svg) no-repeat center;
   background-size: contain;
   scale: 1.75;
 
@@ -248,7 +275,7 @@ div {
 .popup__container_opened {
     scale: 1;
 }
-.popup__next-button {
+.popup__close-button {
   margin: 0;
   padding: 0;
 
@@ -256,12 +283,33 @@ div {
   height: 32px;
 
   position: absolute;
-  top: 44%;
+  top: -40px;
   right: -40px;
 
   cursor: pointer;
 
-  background: transparent url(../../../images/right-button.png) no-repeat center;
+  background: rgba(0, 0, 0, 0) url(../images/gallery/close-button.svg) no-repeat center;
+  outline: none;
+  border: none;
+}
+
+.popup__close-button:hover {
+  opacity: 0.6;
+}
+.popup__next-button {
+  margin: 0;
+  padding: 0;
+
+  width: 3vw;
+  height: 2vw;
+
+  position: absolute;
+  top: 55%;
+  right: -60px;
+
+  cursor: pointer;
+
+  background: transparent url(../images/gallery/right-button.svg) no-repeat center;
   background-size: contain;
   scale: 1.75;
 
@@ -284,6 +332,34 @@ div {
 
   visibility: visible;
 }
+.popup__img-container {
+  height: 25vw;
+  width: 20vw;
+  border-radius: 10px;
+  border: 2px;
+  border-radius: 6px;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s;
+  left: -4%;
+}
+.popup__img {
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  top: 20%;
+  border-radius: 10px;
+  overflow: hidden;
+  object-fit:fill;
+
+  border-radius: 10px;
+}
+.page {
+  position: relative;
+  transition: 0.3s;
+}
+
 @media (max-width: 768px) {
   .flex-start {
     flex-direction: column-reverse;
@@ -303,31 +379,19 @@ div {
     flex-wrap: wrap;
     align-items: center;
   }
-  .popup__container {
-    padding: 25px 22px;
-
-    width: 282px;
-  } 
 
 .popup__container_gallery {
     padding: 0;
   }
-  .popup__next-button {
-    width: 20px;
-    height: 20px;
+  .popup__close-button {
+      width: 20px;
+      height: 20px;
 
-    right: 5px;
+      top: -36px;
+      right: 0;
 
-    background-size: 20px;
+      background-size: 20px;
   }
-  .popup__prev-button {
-    width: 20px;
-    height: 20px;
-
-    right: 91%;
-
-    background-size: 20px;
-}
 }
 
 @media print {
@@ -335,3 +399,4 @@ div {
     color: black;
   }
 }
+

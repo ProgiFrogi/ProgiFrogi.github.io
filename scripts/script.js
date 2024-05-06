@@ -1,5 +1,5 @@
 // Gallery
-const popupGallery = document.querySelector(".popup_gallery");
+const popupGallery = document.querySelector(".popup__gallery");
 const popupGalleryContainer = popupGallery.querySelector(".popup__container");
 const popupGalleryImage = popupGalleryContainer.querySelector(".popup__img");
 
@@ -95,7 +95,7 @@ popupGallery.addEventListener("click", function (evt) {
 })
 
 // Reminder
-const popupReminderElement = document.querySelector(".popup_reminder");
+const popupReminderElement = document.querySelector(".popup__reminder");
 const popupReminderContainer = popupReminderElement.querySelector(".popup__container_reminder");
 const popupReminderCloseButton = popupReminderElement.querySelector(".popup__close-button");
 

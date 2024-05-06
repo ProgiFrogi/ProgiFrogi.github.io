@@ -11,7 +11,7 @@
   <meta property="og:image" content="./static/images/avatar256.webp">
 </head>
 
-<body>
+<body class="page">
   <header class="header">    
   </header>
   <main>
@@ -161,12 +161,15 @@
     </div>
   </footer>
 
-  <div class="popup__gallery">
+  <div class="popup popup__gallery">
     <div class="popup__container popup__container_gallery">
       <button class="popup__close-button" type="button" aria-label="Close"></button>
       <button class="popup__next-button" type="button" aria-label="Next"></button>
       <button class="popup__prev-button" type="button" aria-label="Prev"></button>
-      <img class="popup__img" src="" alt="image">
+      <div class="popup__img-container">
+        <img class="popup__img" src="" alt="image">
+      </div>
+      
     </div>
   </div>
   <div class="popup popup__reminder">
