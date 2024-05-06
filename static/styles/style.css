@@ -193,7 +193,7 @@ div {
   display: inline-block;
   object-fit: cover;
 }
-.footer__contacts {
+/* .footer__contacts {
   margin: 20px auto 5px;
   height: 5vw;
   width: 18vw;
@@ -202,7 +202,7 @@ div {
   background-color: darkblue;
   transition: 0.5s;
 
-}
+} */
 .footer__contacts-h1 {
   color: #63FCF1;
   font-size: 4vw;
@@ -211,10 +211,6 @@ div {
   margin-left: 1.5vw;
 }
 
-.footer__contacts:hover {
-  scale: 1.05;
-
-}
 .popup__container {
     margin: 0;
 
@@ -417,7 +413,7 @@ div {
   .popup__img-container {
     height: 450px;
     top: -250%;
-    left: -180%;
+    left: -150%;
     width: 300px;
   }
 
