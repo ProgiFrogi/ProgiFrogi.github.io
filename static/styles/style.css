@@ -361,6 +361,14 @@ div {
 }
 
 @media (max-width: 768px) {
+  .cards__card {
+    height: 450px;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline-block;
+    transition: 0.3s;
+  }
   .flex-start {
     flex-direction: column;
     justify-content: center;
@@ -392,6 +400,11 @@ div {
 
       background-size: 20px;
   }
+  .popup__img-container {
+    height: ;
+    width: ;
+  }
+
 }
 
 @media print {
