@@ -391,18 +391,32 @@ div {
 .popup__container_gallery {
     padding: 0;
   }
+  .popup__next-button {
+    right: -100%;
+    top: 0;
+    width: 40px;
+    height: 40px;
+  }
+  .popup__prev-button {
+    left: -100%;
+    top: 0;
+    width: 40px;
+    height: 40px;
+  }
   .popup__close-button {
-      width: 300px;
-      height: 450px;
+      top: 200%;
+      right: -100%;
+      width: 400px;
+      height: 40px;
 
-      top: -36px;
-      right: 0;
 
       background-size: 20px;
   }
   .popup__img-container {
-    height: ;
-    width: ;
+    height: 450px;
+    top: -150%;
+    left: -50%;
+    width: 300px;
   }
 
 }
