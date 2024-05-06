@@ -412,7 +412,7 @@ div {
   }
   .popup__img-container {
     height: 450px;
-    top: -250%;
+    top: -300%;
     left: -150%;
     width: 300px;
   }
