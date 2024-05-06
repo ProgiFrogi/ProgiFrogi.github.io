@@ -396,19 +396,21 @@ div {
     top: 0;
     width: 40px;
     height: 40px;
+    z-index: 10;
   }
   .popup__prev-button {
     left: -100%;
     top: 0;
     width: 40px;
     height: 40px;
+    z-index: 10;
   }
   .popup__close-button {
       top: 200%;
       right: -100%;
       width: 400px;
       height: 40px;
-
+      z-index: 10;
 
       background-size: 20px;
   }
