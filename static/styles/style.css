@@ -362,13 +362,13 @@ div {
 
 @media (max-width: 768px) {
   .flex-start {
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
   }
   .writers-container {
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
