@@ -100,7 +100,7 @@ popupGallery.addEventListener("click", function (evt) {
 const popupReminderElement = document.querySelector(".popup__reminder");
 const popupReminderContainer = popupReminderElement.querySelector(".popup__container_reminder");
 const popupReminderCloseButton = popupReminderElement.querySelector(".popup__close-button");
-const timeBeforeShow = 1000 * 25;
+const timeBeforeShow = 1000 * 200000;
 
 const popupReminderOpen = function() {
     popupReminderElement.classList.add("popup_opened");
@@ -141,151 +141,62 @@ popupReminderElement.addEventListener("click", function(evt) {
     localStorage.setItem("is-reminder-opened", "false");
     popupReminderClose();
     evt.stopPropagation();
+    setTimeout(function() {popupReminderOpen();}, timeBeforeShow);
 })
 
 setTimeout(function() {popupReminderOpen();}, timeBeforeShow);
 //#################################################################
 //#################################################################
 // Post form
-// post form
+const contactForm = document.querySelector('.popup__form');
+const formContainer = contactForm.querySelector('.popup__container_form')
+const formCloseButton = formContainer.querySelector('.popup__close-button')
 
-document.getElementById('contact').addEventListener('submit', function (form) {
-    form.preventDefault();
-    const name = document.querySelector('#contact-name').value;
-    const tel = document.querySelector('#contact-phone').value;
-    const email = document.querySelector('#contact-email').value;
-    const description = document.querySelector('#contact-description').value;
-    // TODO: how to rewrite these fields as if i wanted to reuse them?
-    if (validatePrevent(name, tel, email, description)) {
+contactForm.addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent form submission
+    const formData = new FormData(contactForm);
+    
+    // Here you can perform client-side validation before sending the data
+    // For simplicity, let's assume all fields are required and have a minimum length
+
+    if (formData.get('phone').length !== 10 || !validateEmail(formData.get('email')) || formData.get('request').length < 10) {
+        alert('Please fill in all fields correctly.');
         return;
     }
-    const button = form.submitter;
-    console.log();
-    button.textContent = "Sending...";
-    document.body.style.cursor = 'wait';
-    delay(3000).then(() => createPost({
-        title: name,
-        body: tel,
-    })).then(() => {
-        button.textContent = "Submitted!";
-        button.disabled = true;
-        console.log(button);
-        button.style.background = 'lightgreen';
-        document.body.style.cursor = 'default';
-    }).catch(
-        () => {
-            button.style.background = 'red';
-            button.textContent = "Server Error";
-        }
-    );
-});
 
-function delay(ms) {
-    return new Promise((resolve) => {
-        setTimeout(resolve, ms);
-    });
-}
-
-function createPost(newPost) {
-    fetch('https://jsonplaceholder.typicode.com/posts', {
+    const response = await fetch('https://example.com/submit', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json; charset=UTF-8'
-        },
-        body: JSON.stringify({
-            title: newPost.title,
-            body: newPost.body
-        })
-    }).then(res => res.json()).then((post) => {
-        console.log(post);
-
+        body: formData
     });
 
-}
-// validate form
-function validatePrevent(name, tel, email, description) {
-    if (alertEmpty(tel, 'Phone number') || alertEmpty(name, "Name field")) {
-        return true;
-    }
-    if (checkLang(name, 'name') || (description !== null && description !== '' && checkLang(description, 'description'))) {
-        return true;
-    }
-    if (alertNonEmptyEmail(email)) {
-        return true;
-    }
-    if (alertNonEmptyPhone(tel)) {
-        return true;
-    }
-    return false;
-}
-
-function alertEmpty(s, field) {
-    if (s === "" || s === null) {
-        alert(field + ' is required to submit the form')
-        return true
-    }
-    return false;
-}
-
-function checkLang(s, field_abbreviation) {
-    if (s === null || typeof s !== 'string') {
-        return false;
-    }
-    const regex = /^[a-zA-Zа-яА-Я0-9_.,'"!?;:& ]+$/i;
-    if (!s.match(regex)) {
-        alert('Please provide en/ru ' + field_abbreviation);
-        return true;
-    }
-    return false;
-}
-
-function alertNonEmptyPhone(phone) {
-    if (phone !== '' && !validatePhone(phone)) {
-        alert('Please provide correct phone');
-        return true;
-    }
-    return false;
-}
-
-function alertNonEmptyEmail(email) {
-    if (email !== '' && !validateEmail(email)) {
-        alert('Please provide correct email or do not fill that field');
-        return true;
-    }
-    return false;
-}
-
-const validateEmail = (email) => {
-    if (email === null || typeof email !== 'string') {
-        return false;
-    }
-    const regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i;
-    return email.match(regex);
-};
-
-const validatePhone = (phone) => {
-    if (phone === null || typeof phone !== 'string') {
-        return false;
-    }
-    const regex = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/i;
-    return phone.match(regex);
-};
-
-const validate = () => {
-    var result = document.getElementById('contact-email-result');
-    const email = document.getElementById('contact-email').value;
-    result.innerHTML = '';
-    if (email === '') {
-        return;
-    }
-
-    if (validateEmail(email)) {
-        result.innerHTML = email + ' is valid.';
-        result.style.color = 'green';
+    if (response.ok) {
+        // Update button text and style to indicate successful submission
+        const submitButton = contactForm.querySelector('.popup__send');
+        submitButton.textContent = 'Successfully sent';
+        submitButton.style.backgroundColor = 'green';
+        submitButton.style.cursor = 'default';
+        submitButton.disabled = true;
     } else {
-        result.innerHTML = email + ' is invalid.';
-        result.style.color = 'red';
+        alert('Failed to submit form. Please try again later.');
     }
-};
+});
+const popupFromClose = function() {
+    popupForm.classList.remove('popup_opened');
+}
 
-document.getElementById('contact-email').addEventListener('input', validate);
+formCloseButton.addEventListener("click", function(evt) {
+    popupFromClose();
+})
+
+function validateEmail(email) {
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+const contactLink = document.getElementById('contactLink');
+const popupForm = document.querySelector('.popup__form');
+
+contactLink.addEventListener('click', function(event) {
+    event.preventDefault(); // Предотвращаем переход по ссылке
+    popupForm.classList.add('popup_opened'); // Открываем форму
+});
