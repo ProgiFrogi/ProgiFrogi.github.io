@@ -99,21 +99,25 @@ popupGallery.addEventListener("click", function (evt) {
 const popupReminderElement = document.querySelector(".popup__reminder");
 const popupReminderContainer = popupReminderElement.querySelector(".popup__container_reminder");
 const popupReminderCloseButton = popupReminderElement.querySelector(".popup__close-button");
-const timeBeforeShow = 3;
+const timeBeforeShow = 1000 * 25;
 
 const popupReminderOpen = function() {
     popupReminderElement.classList.add("popup_opened");
     popupReminderContainer.classList.add("popup__container_opened");
+    localStorage.setItem("is-reminder-opened", "true"); // Сохраняем состояние попапа
 }
 
 const popupReminderClose = function() {
     popupReminderElement.classList.remove("popup_opened");
     popupReminderContainer.classList.remove("popup__container_opened");
+    localStorage.setItem("is-reminder-opened", "false"); // Сохраняем состояние попапа
 }
 
 const popupReminderOpenFirst = function () {
-    if (!localStorage.getItem("is-reminder-opened")) {
-        localStorage.setItem("show", "true");
+    const isReminderOpened = localStorage.getItem("is-reminder-opened");
+    if (isReminderOpened === "true") {
+        popupReminderOpen();
+    } else {
         setTimeout(popupReminderOpen, timeBeforeShow);
     }
 }
@@ -124,10 +128,12 @@ popupReminderCloseButton.addEventListener("click", function(evt) {
     evt.stopPropagation();
     localStorage.setItem("is-reminder-opened", "false");
     popupReminderClose();
+    setTimeout(function() {popupReminderOpen();}, timeBeforeShow);
 })
 
 popupReminderContainer.addEventListener("click", function(evt) {
     evt.stopPropagation();
+    setTimeout(function() {popupReminderOpen();}, timeBeforeShow);
 });
 
 popupReminderElement.addEventListener("click", function(evt) {
