@@ -1,3 +1,4 @@
+//#######################################################
 // Gallery
 const popupGallery = document.querySelector(".popup__gallery");
 const popupGalleryContainer = popupGallery.querySelector(".popup__container");
@@ -93,11 +94,12 @@ popupGallery.addEventListener("click", function (evt) {
     closePopupGallery();
     evt.stopPropagation();
 })
-
+//#######################################################
 // Reminder
 const popupReminderElement = document.querySelector(".popup__reminder");
 const popupReminderContainer = popupReminderElement.querySelector(".popup__container_reminder");
 const popupReminderCloseButton = popupReminderElement.querySelector(".popup__close-button");
+const timeBeforeShow = 3;
 
 const popupReminderOpen = function() {
     popupReminderElement.classList.add("popup_opened");
@@ -111,7 +113,8 @@ const popupReminderClose = function() {
 
 const popupReminderOpenFirst = function () {
     if (!localStorage.getItem("is-reminder-opened")) {
-        setTimeout(popupReminderOpen, 5000);
+        localStorage.setItem("show", "true");
+        setTimeout(popupReminderOpen, timeBeforeShow);
     }
 }
 popupReminderOpenFirst();
@@ -119,7 +122,7 @@ popupReminderOpenFirst();
 popupReminderCloseButton.addEventListener("click", function(evt) {
     evt.preventDefault();
     evt.stopPropagation();
-    localStorage.setItem("is-reminder-opened", "true");
+    localStorage.setItem("is-reminder-opened", "false");
     popupReminderClose();
 })
 
@@ -128,7 +131,45 @@ popupReminderContainer.addEventListener("click", function(evt) {
 });
 
 popupReminderElement.addEventListener("click", function(evt) {
-    localStorage.setItem("is-reminder-opened", "true");
+    localStorage.setItem("is-reminder-opened", "false");
     popupReminderClose();
     evt.stopPropagation();
 })
+
+setTimeout(function() {popupReminderOpen();}, timeBeforeShow);
+//#######################################################
+// document.addEventListener("DOMContentLoaded", function() {
+//     const popup = document.querySelector(".popup__reminder");
+//     const popupContainer = popup.querySelector("popup__container_reminder");
+//     const closeButton = popup.querySelector("popup__close-button");
+//     const timeBeforeShow = 1;
+//     let show = false;
+  
+//     const popupReminderOpen = function() {
+//       if (!localStorage.getItem("show")) {
+//         popup.classList.add("popup_opened");
+//         popup.classList.add("popup__container_opened");
+//         localStorage.setItem("show", "true");
+//       }
+//     }
+  
+//     const popupReminderClose = function() {
+//       popup.classList.remove("popup_opened");
+//       popup.classList.remove("popup__container_opened");
+//     }
+  
+//     setTimeout(function() {
+//         popupReminderOpen();
+//     }, timeBeforeShow);
+  
+//     closeButton.addEventListener("click", function() {
+//         popupReminderClose();
+//     })
+  
+//     popup.addEventListener('click', e => {
+//       if (!(e.composedPath().includes(popupContainer) || e.composedPath().includes(closeButton))) {
+//         popup.classList.remove("popup_opened");
+//         popup.classList.remove("popup__container_opened");
+//       }
+//     })
+//   })

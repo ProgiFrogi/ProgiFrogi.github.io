@@ -22,7 +22,7 @@ div {
   justify-content: center;
   align-items: center;
 
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, .5);
 
   /* Эти параметры нужны, чтобы скрыть popup, т.к. еще не написаны js-компоненты */
   visibility: hidden;
@@ -351,6 +351,17 @@ div {
 
   border-radius: 10px;
 }
+.popup__remnder_h2 {
+  font-size: 3vw;
+}
+.popup__container_reminder{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -5%;
+  width: 20vw;
+  height: 15vw;
+}
 .page {
   position: relative;
   transition: 0.3s;
@@ -404,8 +415,8 @@ div {
   .popup__close-button {
       top: 200%;
       right: -200%;
-      width: 400px;
-      height: 40px;
+      width: 60px;
+      height: 60px;
       z-index: 10;
 
       background-size: 20px;
