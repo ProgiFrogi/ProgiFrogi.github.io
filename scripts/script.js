@@ -1,4 +1,4 @@
-//#######################################################
+//#################################################################
 // Gallery
 const popupGallery = document.querySelector(".popup__gallery");
 const popupGalleryContainer = popupGallery.querySelector(".popup__container");
@@ -94,7 +94,8 @@ popupGallery.addEventListener("click", function (evt) {
     closePopupGallery();
     evt.stopPropagation();
 })
-//#######################################################
+//#################################################################
+//#################################################################
 // Reminder
 const popupReminderElement = document.querySelector(".popup__reminder");
 const popupReminderContainer = popupReminderElement.querySelector(".popup__container_reminder");
@@ -143,39 +144,148 @@ popupReminderElement.addEventListener("click", function(evt) {
 })
 
 setTimeout(function() {popupReminderOpen();}, timeBeforeShow);
-//#######################################################
-// document.addEventListener("DOMContentLoaded", function() {
-//     const popup = document.querySelector(".popup__reminder");
-//     const popupContainer = popup.querySelector("popup__container_reminder");
-//     const closeButton = popup.querySelector("popup__close-button");
-//     const timeBeforeShow = 1;
-//     let show = false;
-  
-//     const popupReminderOpen = function() {
-//       if (!localStorage.getItem("show")) {
-//         popup.classList.add("popup_opened");
-//         popup.classList.add("popup__container_opened");
-//         localStorage.setItem("show", "true");
-//       }
-//     }
-  
-//     const popupReminderClose = function() {
-//       popup.classList.remove("popup_opened");
-//       popup.classList.remove("popup__container_opened");
-//     }
-  
-//     setTimeout(function() {
-//         popupReminderOpen();
-//     }, timeBeforeShow);
-  
-//     closeButton.addEventListener("click", function() {
-//         popupReminderClose();
-//     })
-  
-//     popup.addEventListener('click', e => {
-//       if (!(e.composedPath().includes(popupContainer) || e.composedPath().includes(closeButton))) {
-//         popup.classList.remove("popup_opened");
-//         popup.classList.remove("popup__container_opened");
-//       }
-//     })
-//   })
+//#################################################################
+//#################################################################
+// Post form
+// post form
+
+document.getElementById('contact').addEventListener('submit', function (form) {
+    form.preventDefault();
+    const name = document.querySelector('#contact-name').value;
+    const tel = document.querySelector('#contact-phone').value;
+    const email = document.querySelector('#contact-email').value;
+    const description = document.querySelector('#contact-description').value;
+    // TODO: how to rewrite these fields as if i wanted to reuse them?
+    if (validatePrevent(name, tel, email, description)) {
+        return;
+    }
+    const button = form.submitter;
+    console.log();
+    button.textContent = "Sending...";
+    document.body.style.cursor = 'wait';
+    delay(3000).then(() => createPost({
+        title: name,
+        body: tel,
+    })).then(() => {
+        button.textContent = "Submitted!";
+        button.disabled = true;
+        console.log(button);
+        button.style.background = 'lightgreen';
+        document.body.style.cursor = 'default';
+    }).catch(
+        () => {
+            button.style.background = 'red';
+            button.textContent = "Server Error";
+        }
+    );
+});
+
+function delay(ms) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+    });
+}
+
+function createPost(newPost) {
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json; charset=UTF-8'
+        },
+        body: JSON.stringify({
+            title: newPost.title,
+            body: newPost.body
+        })
+    }).then(res => res.json()).then((post) => {
+        console.log(post);
+
+    });
+
+}
+// validate form
+function validatePrevent(name, tel, email, description) {
+    if (alertEmpty(tel, 'Phone number') || alertEmpty(name, "Name field")) {
+        return true;
+    }
+    if (checkLang(name, 'name') || (description !== null && description !== '' && checkLang(description, 'description'))) {
+        return true;
+    }
+    if (alertNonEmptyEmail(email)) {
+        return true;
+    }
+    if (alertNonEmptyPhone(tel)) {
+        return true;
+    }
+    return false;
+}
+
+function alertEmpty(s, field) {
+    if (s === "" || s === null) {
+        alert(field + ' is required to submit the form')
+        return true
+    }
+    return false;
+}
+
+function checkLang(s, field_abbreviation) {
+    if (s === null || typeof s !== 'string') {
+        return false;
+    }
+    const regex = /^[a-zA-Zа-яА-Я0-9_.,'"!?;:& ]+$/i;
+    if (!s.match(regex)) {
+        alert('Please provide en/ru ' + field_abbreviation);
+        return true;
+    }
+    return false;
+}
+
+function alertNonEmptyPhone(phone) {
+    if (phone !== '' && !validatePhone(phone)) {
+        alert('Please provide correct phone');
+        return true;
+    }
+    return false;
+}
+
+function alertNonEmptyEmail(email) {
+    if (email !== '' && !validateEmail(email)) {
+        alert('Please provide correct email or do not fill that field');
+        return true;
+    }
+    return false;
+}
+
+const validateEmail = (email) => {
+    if (email === null || typeof email !== 'string') {
+        return false;
+    }
+    const regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i;
+    return email.match(regex);
+};
+
+const validatePhone = (phone) => {
+    if (phone === null || typeof phone !== 'string') {
+        return false;
+    }
+    const regex = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/i;
+    return phone.match(regex);
+};
+
+const validate = () => {
+    var result = document.getElementById('contact-email-result');
+    const email = document.getElementById('contact-email').value;
+    result.innerHTML = '';
+    if (email === '') {
+        return;
+    }
+
+    if (validateEmail(email)) {
+        result.innerHTML = email + ' is valid.';
+        result.style.color = 'green';
+    } else {
+        result.innerHTML = email + ' is invalid.';
+        result.style.color = 'red';
+    }
+};
+
+document.getElementById('contact-email').addEventListener('input', validate);

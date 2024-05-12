@@ -414,12 +414,19 @@ div {
   }
   .popup__close-button {
       top: 200%;
-      right: -200%;
+      right: -20%;
       width: 60px;
       height: 60px;
       z-index: 10;
 
       background-size: 20px;
+  }
+  .popup__container_reminder {
+    width: 40vw;
+    height: 20vw;
+  }
+  .popup__remnder_h2 {
+    font-size: 8vw;
   }
   .popup__img-container {
     height: 450px;
