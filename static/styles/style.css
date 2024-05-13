@@ -709,7 +709,7 @@ div {
   .popup__form_email input {
     font-size: 1.25rem;
     height: 4vw;
-    width: 30vw;
+    width: 32vw;
   }
   .popup__form_phone input {
     width: 30vw;
@@ -720,7 +720,7 @@ div {
     display: flex;
     justify-content: space-between;
     width: 137vw;
-    margin-bottom: 15vw;
+    margin-bottom: 20vw;
   }
   .popup__form_email {
     display: block;
