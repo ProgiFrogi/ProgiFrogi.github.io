@@ -644,6 +644,11 @@ div {
     width: 44vw;
   }
 
+  .timer__timer {
+    color: rgb(94, 0, 0);
+    font-size: 3rem;
+  }
+
 }
 
 @media print {
