@@ -376,83 +376,6 @@ div {
   transition: 0.3s;
 }
 
-
-@media (max-width: 768px) {
-  .cards__card {
-    height: 300px;
-    width: 200px;
-    border-radius: 10px;
-    overflow: hidden;
-    display: inline-block;
-    transition: 0.3s;
-  }
-  .flex-start {
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .writers-container {
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .edu-rows {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-.popup__container_gallery {
-    padding: 0;
-  }
-  .popup__next-button {
-    right: 6%;
-    top: 80%;
-    width: 40px;
-    height: 40px;
-    z-index: 10;
-  }
-  .popup__prev-button {
-    left: -6%;
-    top: 80%;
-    width: 40px;
-    height: 40px;
-    z-index: 10;
-  }
-  .popup__close-button {
-      top: 80%;
-      right: 40%;
-      width: 62px;
-      height: 60px;
-      z-index: 10;
-
-      background-size: 40px;
-  }
-  .popup__container_reminder {
-    width: 40vw;
-    height: 20vw;
-  }
-  .popup__remnder_h2 {
-    font-size: 8vw;
-  }
-  .popup__img-container {
-    height: 50vw;
-    top: -80%;
-    left: -10%;
-    width: 44vw;
-  }
-
-}
-
-@media print {
-  body {
-    color: black;
-  }
-}
-
 .popup__container_form {
   width: 228vw;
   height: 150vw;
@@ -649,5 +572,82 @@ div {
 
   100% {
       background-position: 0px 30000px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .cards__card {
+    height: 300px;
+    width: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline-block;
+    transition: 0.3s;
+  }
+  .flex-start {
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .writers-container {
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .edu-rows {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+.popup__container_gallery {
+    padding: 0;
+  }
+  .popup__next-button {
+    right: 6%;
+    top: 80%;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+  }
+  .popup__prev-button {
+    left: -6%;
+    top: 80%;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+  }
+  .popup__close-button {
+      top: 80%;
+      right: 40%;
+      width: 62px;
+      height: 60px;
+      z-index: 10;
+
+      background-size: 40px;
+  }
+  .popup__container_reminder {
+    width: 40vw;
+    height: 20vw;
+  }
+  .popup__remnder_h2 {
+    font-size: 8vw;
+  }
+  .popup__img-container {
+    height: 50vw;
+    top: -80%;
+    left: -10%;
+    width: 44vw;
+  }
+
+}
+
+@media print {
+  body {
+    color: black;
   }
 }
