@@ -649,6 +649,12 @@ div {
     font-size: 3rem;
   }
 
+  .popup__container_form {
+    width: 328vw;
+    height: 450vw;
+    right: 50%;
+  }
+
 }
 
 @media print {
