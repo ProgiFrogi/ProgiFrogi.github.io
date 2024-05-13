@@ -247,7 +247,7 @@ div {
   display: flex;
 }
 .form__title {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bold;
 }
 
@@ -728,7 +728,11 @@ div {
   }
   .popup__form_phone label {
     font-size: 2rem;
-}
+  }
+  .form__example-phone {
+    font-size: 0.8rem;
+    display: inline;
+  }
 }
 
 
