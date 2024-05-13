@@ -555,6 +555,23 @@ div {
     background-position: 0px 0px;
     animation: animatedBackground 750s linear infinite;
 }
+.popup__close-button {
+  margin: 0;
+  padding: 0;
+
+  width: 2vw;
+  height: 2vw;
+
+  position: absolute;
+  top: -27px;
+  right: 59px;
+
+  cursor: pointer;
+
+  background: rgba(0, 0, 0, 0) url(../images/gallery/close-button.svg) no-repeat center;
+  outline: none;
+  border: none;
+}
 
 @keyframes animatedBackground {
   0% {
@@ -675,24 +692,7 @@ div {
     width: 62px;
     height: 62px;
     z-index: 10;
-}
-}
-.popup__close-button {
-  margin: 0;
-  padding: 0;
-
-  width: 2vw;
-  height: 2vw;
-
-  position: absolute;
-  top: -27px;
-  right: 59px;
-
-  cursor: pointer;
-
-  background: rgba(0, 0, 0, 0) url(../images/gallery/close-button.svg) no-repeat center;
-  outline: none;
-  border: none;
+  }
 }
 
 
