@@ -649,9 +649,11 @@ div {
   .popup__container_form {
     width: 370vw;
     height: 550vw;
-    right: 80%;
   }
-
+  .popup__form {
+    display: flex;
+    padding-left: 200px;
+  }
 }
 
 @media print {
