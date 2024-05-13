@@ -415,7 +415,7 @@ div {
 }
 
 .popup__form_phone label {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .popup__form_email label {
   display: inline;
@@ -441,9 +441,7 @@ div {
   height: 6vw;
   font-size: 1rem;
 }
-.form__phone-title {
-  font-size: 1.5rem;
-}
+
 .form__request {
   font-size: 4rem;
 }
@@ -727,7 +725,8 @@ div {
     
   }
   .popup__form_phone label {
-    font-size: 2rem;
+    font-size: 1.2rem;
+    width: 2vw;
   }
   .form__example-phone {
     font-size: 0.8rem;
