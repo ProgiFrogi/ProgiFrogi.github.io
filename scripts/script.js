@@ -105,13 +105,13 @@ const timeBeforeShow = 1000 * 200000;
 const popupReminderOpen = function() {
     popupReminderElement.classList.add("popup_opened");
     popupReminderContainer.classList.add("popup__container_opened");
-    localStorage.setItem("is-reminder-opened", "true"); // Сохраняем состояние попапа
+    localStorage.setItem("is-reminder-opened", "true");
 }
 
 const popupReminderClose = function() {
     popupReminderElement.classList.remove("popup_opened");
     popupReminderContainer.classList.remove("popup__container_opened");
-    localStorage.setItem("is-reminder-opened", "false"); // Сохраняем состояние попапа
+    localStorage.setItem("is-reminder-opened", "false");
 }
 
 const popupReminderOpenFirst = function () {
@@ -156,8 +156,8 @@ const popupFromClose = function() {
     popupForm.classList.remove('popup_opened');
     const submitButton = contactForm.querySelector('.popup__send');
     submitButton.textContent = 'Submit';
-    submitButton.style.backgroundColor = 'green'; // Возвращаем исходный цвет
-    submitButton.style.cursor = 'pointer'; // Возвращаем исходный вид курсора
+    submitButton.style.backgroundColor = 'green';
+    submitButton.style.cursor = 'pointer';
     submitButton.disabled = false; 
 }
 
@@ -171,8 +171,8 @@ const formContact = document.getElementById('contactForm');
 const submitButton = contactForm.querySelector('.popup__send');
 
 contactLink.addEventListener('click', function(event) {
-    event.preventDefault(); // Предотвращаем переход по ссылке
-    popupForm.classList.add('popup_opened'); // Открываем форму
+    event.preventDefault();
+    popupForm.classList.add('popup_opened');
 });
 
 contactForm.addEventListener('submit', async function(event) {
@@ -202,24 +202,21 @@ contactForm.addEventListener('submit', async function(event) {
         return;
     }
 
-    // Изменение текста и стилей кнопки отправки
     submitButton.textContent = 'Sending...';
     submitButton.style.backgroundColor = 'orange';
     submitButton.style.cursor = 'not-allowed';
     submitButton.disabled = true;
 
-    // Отправка данных методом POST
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json; charset=UTF-8'
             },
-            body: JSON.stringify(Object.fromEntries(formData.entries())) // Преобразуем FormData в объект и конвертируем в JSON
+            body: JSON.stringify(Object.fromEntries(formData.entries()))
         });
 
         if (response.ok) {
-            // Успешная отправка формы
             submitButton.textContent = 'Successfully send';
             submitButton.style.backgroundColor = 'green';
             submitButton.style.cursor = 'default';
@@ -235,32 +232,30 @@ contactForm.addEventListener('submit', async function(event) {
         console.error(error);
         alert('Failed to submit form. Please try again later.');
         submitButton.textContent = 'Submit';
-        submitButton.style.backgroundColor = ''; // Возвращаем исходный цвет
-        submitButton.style.cursor = ''; // Возвращаем исходный вид курсора
-        submitButton.disabled = false; // Разрешаем снова отправку формы
+        submitButton.style.backgroundColor = '';
+        submitButton.style.cursor = '';
+        submitButton.disabled = false;
     }
 })
 
 // Функция валидации телефона
 function IsOnlyNumInPhone(phone) {
-    const phoneRegex = /^\d+$/; // Проверяем, что телефон состоит из 10 цифр
+    const phoneRegex = /^\d+$/;
     return phoneRegex.test(phone);
 }
 
 function IsTen(phone) {
-    const phoneRegex = /^.{10}$/; // Проверяем, что телефон состоит из 10 цифр
+    const phoneRegex = /^.{10}$/;
     return phoneRegex.test(phone);
 }
 
-// Функция валидации имейла
 function validateEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Простая проверка формата имейла
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
 
-// Функция валидации текста (текст может быть только на русском или английском языке)
 function validateText(text) {
-    const textRegex = /^[a-zA-Z\s]+$/; // Проверяем, что текст состоит только из букв
+    const textRegex = /^[a-zA-Z\s]+$/;
     return textRegex.test(text);
 }
 //#################################################################
@@ -293,10 +288,10 @@ function countdown() {
 //#################################################################
 // Scroll menu
 window.addEventListener('scroll', function() {
-    const header = document.querySelector(".header"); // Получаем элемент меню
-    const firstScreenHeight = window.innerHeight; // Высота первого экрана
-    const secondScreenOffset = firstScreenHeight * 2; // Смещение для второго экрана
-    const headerHeight = header.offsetHeight; // Высота меню
+    const header = document.querySelector(".header");
+    const firstScreenHeight = window.innerHeight;
+    const secondScreenOffset = firstScreenHeight * 2;
+    const headerHeight = header.offsetHeight;
     
     if (window.scrollY < firstScreenHeight) {
         header.classList.add('disabled');

@@ -24,7 +24,6 @@ div {
 
   background: rgba(0, 0, 0, .5);
 
-  /* Эти параметры нужны, чтобы скрыть popup, т.к. еще не написаны js-компоненты */
   visibility: hidden;
   opacity: 0;
 
@@ -384,10 +383,10 @@ div {
 }
 
 .form__head {
-  display: flex; /* Располагаем элементы в строку */
-  justify-content: space-between; /* Выравниваем по краям */
-  align-items: center; /* Выравниваем по вертикали */
-  margin-bottom: 2px; /* Отступ снизу */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
 }
 
 .form__title {
@@ -421,8 +420,8 @@ div {
   display: inline;
 }
 .popup__form_request label {
-  display: block; /* Располагаем метки на новой строке */
-  margin-bottom: 5px; /* Отступ снизу */
+  display: block;
+  margin-bottom: 5px;
   font-size: 8rem;
 }
 
@@ -470,7 +469,7 @@ div {
 }
 
 .popup__send:hover {
-  background-color: #45a049; /* Цвет фона при наведении */
+  background-color: #45a049;
 }
 .timer__container {
   background-color: gray;
@@ -519,14 +518,14 @@ div {
   width: 100%;
   height: 30px;
   z-index: 100;
-  background-color: #fff; /* Цвет фона меню */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для эффекта поднятия */
-  transition: top 0.3s ease; /* Плавное появление/исчезновение */
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: top 0.3s ease;
 }
 
 .fixed-header.active {
   position: fixed;
-  top: 0; /* Выталкиваем меню вверх, чтобы скрыть его */
+  top: 0;
 }
 .fixed-header.start {
   position: relative;
@@ -536,10 +535,9 @@ div {
   position: absolute;
   top: 0px;
   width: 100%;
-  z-index: 1000; /* Чтобы меню оставалось поверх других элементов */
+  z-index: 1000;
 }
 
-/* Добавить пространство для меню после второго экрана */
 .main_container {
   padding-top: 30px;
 }
@@ -552,7 +550,7 @@ div {
     animation: animatedBackground 450s linear infinite;
 }
 
-/* all radiuses are 0.3 or 0.7 with color 2A9DF4*/
+/* all radiuses are 5 or 0.7 with color red*/
 .snow-fade {
     height: 100vh;
     width: 80%;
@@ -682,7 +680,7 @@ div {
     font-size: 3rem;
   }
   .popup__send {
-    width: 226vw;
+    width: 370vw;
     font-size: 8rem;
     background-color: #4caf50;
     color: red;
