@@ -486,7 +486,7 @@ div {
 
 .menu {
   background-color: #333;
-  height: 3vw;
+  height: 6vh;
   
 }
 
@@ -655,7 +655,7 @@ div {
 
   .popup__container_form {
     width: 61vw;
-    height: 56vw;
+    height: 66vw;
   }
   .popup__form {
     display: flex;
@@ -675,17 +675,18 @@ div {
     display: flex;
   }
   .popup__form_request textarea {
-    width: 355vw;
-    height: 250vw;
-    font-size: 3rem;
+    width: 57vw;
+    height: 20vw;
+    font-size: 1rem;
   }
   .popup__send {
-    width: 40vw;
-    font-size: 8rem;
+    width: 55vw;
+    font-size: 2cap;
     background-color: #4caf50;
     color: red;
     border-radius: 8px;
     position: absolute;
+    left: 3vw;
     top: 100%;
     cursor: pointer;
   }
@@ -695,6 +696,35 @@ div {
     width: 62px;
     height: 62px;
     z-index: 10;
+  }
+  .popup__container_form .popup__close-button {
+    top: 104%;
+  }
+  .form__request {
+    font-size: 1rem;
+  }
+  .form__phone-title {
+    font-size: 1rem;
+  }
+  .popup__form_email input {
+    font-size: 1.25rem;
+    height: 4vw;
+    width: 30vw;
+  }
+  .popup__form_phone input {
+    width: 30vw;
+    height: 4vw;
+    font-size: 1.25rem;
+  }
+  .popup__form_phone {
+    display: flex;
+    justify-content: space-between;
+    width: 137vw;
+    margin-bottom: 15vw;
+  }
+  .popup__form_email {
+    display: block;
+    
   }
 }
 
