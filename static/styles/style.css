@@ -726,6 +726,9 @@ div {
     display: block;
     
   }
+  .popup__form_phone label {
+    font-size: 2rem;
+}
 }
 
 
