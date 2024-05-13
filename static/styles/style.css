@@ -647,9 +647,9 @@ div {
   }
 
   .popup__container_form {
-    width: 328vw;
-    height: 450vw;
-    right: 50%;
+    width: 370vw;
+    height: 550vw;
+    right: 80%;
   }
 
 }
