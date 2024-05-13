@@ -389,7 +389,6 @@ div {
 .popup__form_email {
   display: flex;
   margin-top: 8vw;
-
 }
 .popup__form_request {
   width: 3100px;
@@ -641,6 +640,10 @@ div {
   .popup__form_phone {
     padding: 100px;
     padding-left: 0;
+  }
+  .popup__form_email {
+    display: flex;
+    margin-top: 15vw;
   }
 }
 
