@@ -278,23 +278,6 @@ div {
 .popup__container_opened {
     scale: 1;
 }
-.popup__close-button {
-  margin: 0;
-  padding: 0;
-
-  width: 2vw;
-  height: 2vw;
-
-  position: absolute;
-  top: -27px;
-  right: 59px;
-
-  cursor: pointer;
-
-  background: rgba(0, 0, 0, 0) url(../images/gallery/close-button.svg) no-repeat center;
-  outline: none;
-  border: none;
-}
 
 .popup__close-button:hover {
   opacity: 0.6;
@@ -383,6 +366,7 @@ div {
   width: 20vw;
   height: 20vw;
   display: flex;
+  justify-content: column;
 }
 
 .form__head {
@@ -393,8 +377,8 @@ div {
 }
 
 .form__title {
-  font-size: 15rem; /* Размер шрифта заголовка */
-  font-weight: bold; /* Жирный шрифт */
+  font-size: 15rem;
+  font-weight: bold;
 }
 
 .popup__form_phone {
@@ -620,13 +604,6 @@ div {
     height: 40px;
     z-index: 10;
   }
-  .popup__close-button {
-      top: 80%;
-      right: 40%;
-      width: 62px;
-      height: 62px;
-      z-index: 10;
-  }
   .popup__container_reminder {
     width: 40vw;
     height: 20vw;
@@ -652,9 +629,22 @@ div {
   }
   .popup__form {
     display: flex;
-    padding-left: 200px;
+    padding-left: 20px;
+  }
+  .popup__close-button {
+    top: 80%;
+    right: 40%;
+    width: 62px;
+    height: 62px;
+    z-index: 10;
+  }
+  .popup__form_phone {
+    padding: 100px;
+    padding-left: 0;
   }
 }
+
+
 
 @media print {
   body {
