@@ -645,6 +645,11 @@ div {
     display: flex;
     margin-top: 15vw;
   }
+  .popup__form_request textarea {
+    width: 355vw;
+    height: 250vw;
+    font-size: 3rem;
+  }
 }
 
 
