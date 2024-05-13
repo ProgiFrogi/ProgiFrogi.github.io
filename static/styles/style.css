@@ -650,6 +650,16 @@ div {
     height: 250vw;
     font-size: 3rem;
   }
+  .popup__send {
+    width: 370vw;
+    font-size: 8rem;
+    background-color: #4caf50;
+    color: red;
+    border-radius: 8px;
+    position: absolute;
+    top: 100%;
+    cursor: pointer;
+  }
 }
 
 
