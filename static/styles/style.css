@@ -193,6 +193,11 @@ div {
   display: inline-block;
   object-fit: cover;
 }
+.footer__contacts {
+  display: flex;
+  align-items:stretch;
+  justify-content: space-between;
+}
 
 .footer__contacts-h1 {
   color: #63FCF1;
