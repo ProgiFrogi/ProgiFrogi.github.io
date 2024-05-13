@@ -669,6 +669,13 @@ div {
     top: 100%;
     cursor: pointer;
   }
+  .popup__close-button {
+    top: 80%;
+    right: 40%;
+    width: 62px;
+    height: 62px;
+    z-index: 10;
+}
 }
 .popup__close-button {
   margin: 0;
