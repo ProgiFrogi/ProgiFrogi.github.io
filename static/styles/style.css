@@ -553,3 +553,104 @@ div {
 .popup__send:hover {
   background-color: #45a049; /* Цвет фона при наведении */
 }
+.timer__container {
+  background-color: gray;
+}
+.timer__title {
+  color: #63FCF1;
+}
+.timer__timer {
+  color: rgb(94, 0, 0);
+  font-size: 15rem;
+}
+
+.menu {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.menu-list li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.menu-list li:last-child {
+  margin-right: 0;
+}
+
+.menu-list li a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-list li a:hover {
+  text-decoration: underline;
+}
+.fixed-header {
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  z-index: 100;
+  background-color: #fff; /* Цвет фона меню */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для эффекта поднятия */
+  transition: top 0.3s ease; /* Плавное появление/исчезновение */
+}
+
+.fixed-header.active {
+  position: fixed;
+  top: 0; /* Выталкиваем меню вверх, чтобы скрыть его */
+}
+.fixed-header.start {
+  position: relative;
+}
+
+.fixed-header.disabled {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 1000; /* Чтобы меню оставалось поверх других элементов */
+}
+
+/* Добавить пространство для меню после второго экрана */
+.main_container {
+  padding-top: 30px;
+}
+
+#animatedSVG {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Делаем SVG-элемент невидимым для событий мыши */
+  opacity: 0; /* По умолчанию SVG-элемент скрыт */
+  transition: opacity 0.5s ease-in-out; /* Добавляем анимацию перехода */
+}
+
+.fullscreen {
+  opacity: 1; /* Показываем SVG-элемент */
+}
+
+svg {
+  max-width: 90vw; 
+  height: 100vh;
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Делаем SVG-элемент невидимым для событий мыши */
+  opacity: 0; /* По умолчанию SVG-элемент скрыт */
+  transition: opacity 0.5s ease-in-out;
+}
