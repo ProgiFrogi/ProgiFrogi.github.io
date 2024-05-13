@@ -576,6 +576,11 @@ div {
   border: none;
 }
 
+.form__phone-title {
+  font-size: 1.5rem;
+  width: 26vw;
+}
+
 @keyframes animatedBackground {
   0% {
       background-position: 0 0;
@@ -703,6 +708,7 @@ div {
   }
   .form__phone-title {
     font-size: 0.8rem;
+    width: 2vw;
   }
   .popup__form_email input {
     font-size: 1.25rem;
