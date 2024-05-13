@@ -62,7 +62,6 @@ function setImage() {
 
 imgContainerArray.forEach(function (item) {
     item.addEventListener("click", function () {
-        console.log(item);
         currentImageContainer = item;
         currentImageLink = item.querySelector(".cards__img").src;
         setImage();
@@ -100,7 +99,7 @@ popupGallery.addEventListener("click", function (evt) {
 const popupReminderElement = document.querySelector(".popup__reminder");
 const popupReminderContainer = popupReminderElement.querySelector(".popup__container_reminder");
 const popupReminderCloseButton = popupReminderElement.querySelector(".popup__close-button");
-const timeBeforeShow = 1000 * 200000;
+const timeBeforeShow = 1000 * 10;
 
 const popupReminderOpen = function() {
     popupReminderElement.classList.add("popup_opened");
@@ -170,16 +169,15 @@ const popupForm = document.querySelector('.popup__form');
 const formContact = document.getElementById('contactForm');
 const submitButton = contactForm.querySelector('.popup__send');
 
-contactLink.addEventListener('click', function(event) {
-    event.preventDefault();
+contactLink.addEventListener('click', function(evt) {
+    evt.preventDefault();
     popupForm.classList.add('popup_opened');
 });
 
-contactForm.addEventListener('submit', async function(event) {
-    event.preventDefault();
+contactForm.addEventListener('submit', async function(evt) {
+    evt.preventDefault();
     const formData = new FormData(formContact);
 
-    // Валидация данных формы
     const phone = formData.get('phone');
     const email = formData.get('email');
     const request = formData.get('request');
@@ -238,7 +236,6 @@ contactForm.addEventListener('submit', async function(event) {
     }
 })
 
-// Функция валидации телефона
 function IsOnlyNumInPhone(phone) {
     const phoneRegex = /^\d+$/;
     return phoneRegex.test(phone);
@@ -283,7 +280,7 @@ function countdown() {
     }, 1000);
   }
   
-  countdown(); // Запуск таймера при загрузке страницы
+  countdown();
 //#################################################################
 //#################################################################
 // Scroll menu
