@@ -99,7 +99,7 @@ popupGallery.addEventListener("click", function (evt) {
 const popupReminderElement = document.querySelector(".popup__reminder");
 const popupReminderContainer = popupReminderElement.querySelector(".popup__container_reminder");
 const popupReminderCloseButton = popupReminderElement.querySelector(".popup__close-button");
-const timeBeforeShow = 1000 * 10;
+const timeBeforeShow = 1000 * 100000;
 
 const popupReminderOpen = function() {
     popupReminderElement.classList.add("popup_opened");
@@ -150,9 +150,14 @@ setTimeout(function() {popupReminderOpen();}, timeBeforeShow);
 const contactForm = document.querySelector('.popup__form');
 const formContainer = contactForm.querySelector('.popup__container_form')
 const formCloseButton = formContainer.querySelector('.popup__close-button')
+const contactLink = document.getElementById('contactLink');
+const popupForm = document.querySelector('.popup__form');
+const formContact = document.getElementById('contactForm');
+const submitButton = contactForm.querySelector('.popup__send');
 
 const popupFromClose = function() {
     popupForm.classList.remove('popup_opened');
+    formContainer.classList.remove('popup__container_opened')
     const submitButton = contactForm.querySelector('.popup__send');
     submitButton.textContent = 'Submit';
     submitButton.style.backgroundColor = 'green';
@@ -164,14 +169,10 @@ formCloseButton.addEventListener("click", function(evt) {
     popupFromClose();
 })
 
-const contactLink = document.getElementById('contactLink');
-const popupForm = document.querySelector('.popup__form');
-const formContact = document.getElementById('contactForm');
-const submitButton = contactForm.querySelector('.popup__send');
-
 contactLink.addEventListener('click', function(evt) {
     evt.preventDefault();
     popupForm.classList.add('popup_opened');
+    formContainer.classList.add('popup__container_opened')
 });
 
 contactForm.addEventListener('submit', async function(evt) {
@@ -286,9 +287,10 @@ function countdown() {
 // Scroll menu
 window.addEventListener('scroll', function() {
     const header = document.querySelector(".header");
+    const menu = header.querySelector('.menu')
     const firstScreenHeight = window.innerHeight;
     const secondScreenOffset = firstScreenHeight * 2;
-    const headerHeight = header.offsetHeight;
+    const menuHeight = menu.offsetHeight;
     
     if (window.scrollY < firstScreenHeight) {
         header.classList.add('disabled');
@@ -297,7 +299,7 @@ window.addEventListener('scroll', function() {
     } else {
         header.classList.remove('disabled');
         header.classList.add('active');
-        document.body.style.paddingTop = headerHeight - 15 + 'px';
+        document.body.style.paddingTop = '0';
     }
 });
 //#################################################################

@@ -247,7 +247,7 @@ div {
   display: flex;
 }
 .form__title {
-  font-size: 1.25rem;
+  font-size: 4rem;
   font-weight: bold;
 }
 
@@ -372,14 +372,14 @@ div {
 }
 
 .popup__container_form {
-  width: 228vw;
-  height: 150vw;
+  width: 30vw;
+  height: 30vw;
 }
 .popup__form_phone {
   width: 20vw;
-  height: 20vw;
+  height: 2vw;
   display: flex;
-  justify-content: column;
+  justify-content: center;
 }
 
 .form__head {
@@ -390,56 +390,59 @@ div {
 }
 
 .form__title {
-  font-size: 15rem;
+  font-size: 4rem;
   font-weight: bold;
 }
 
 .popup__form_phone {
   display: flex;
   justify-content: space-between;
-  width: 800vw;
+  width: 137vw;
+  margin-bottom: 5vw;
 }
 .popup__form_email {
-  display: flex;
-  margin-top: 8vw;
+  display: block;
+  margin-top: 7vw;
+  
 }
 .popup__form_request {
   width: 3100px;
 
 }
 .form__example-phone {
-  margin: 1vw;
-  font-size: 4rem;
+  font-size: 1.25rem;
   display: inline;
 }
 
 .popup__form_phone label {
-
+  font-size: 2rem;
 }
 .popup__form_email label {
   display: inline;
+  font-size: 1.5rem;
 }
 .popup__form_request label {
   display: block;
-  margin-bottom: 5px;
-  font-size: 8rem;
+  font-size: 1rem;
 }
 
 .popup__form_phone input {
-  width: 100vw;
-  height: 50vw;
-  font-size: 4rem;
+  width: 15vw;
+  height: 2vw;
+  font-size: 1.25rem;
 }
 .popup__form_email input {
-  font-size: 4rem;
+  font-size: 1.25rem;
+  height: 2vw;
+  width: 20vw;
 }
 .popup__form_request textarea {
-  width: 225vw;
-  height: 60vw;
-  font-size: 3rem;
+  width: 27vw;
+  height: 6vw;
+  font-size: 1rem;
 }
 .form__phone-title {
-  font-size: 4rem;
+  font-size: 1.5rem;
 }
 .form__request {
   font-size: 4rem;
@@ -453,8 +456,8 @@ div {
 }
 
 .popup__send {
-  width: 226vw;
-  font-size: 8rem;
+  width: 28vw;
+  font-size: 3rem;
   background-color: #4caf50;
   color: red;
   border-radius: 8px;
@@ -464,8 +467,7 @@ div {
 }
 
 .form__email {
-  font-size: 5rem;
-  margin: 1vw;
+  font-size: 2rem;
 }
 
 .popup__send:hover {
@@ -484,14 +486,14 @@ div {
 
 .menu {
   background-color: #333;
-  color: white;
-  padding: 10px 0;
+  height: 3vw;
+  
 }
 
 .menu-list {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding-top: 1vw;
   text-align: center;
 }
 
@@ -567,7 +569,7 @@ div {
 
   position: absolute;
   top: -27px;
-  right: 59px;
+  right: 1px;
 
   cursor: pointer;
 
@@ -652,8 +654,8 @@ div {
   }
 
   .popup__container_form {
-    width: 370vw;
-    height: 550vw;
+    width: 61vw;
+    height: 56vw;
   }
   .popup__form {
     display: flex;
@@ -667,12 +669,10 @@ div {
     z-index: 10;
   }
   .popup__form_phone {
-    padding: 100px;
     padding-left: 0;
   }
   .popup__form_email {
     display: flex;
-    margin-top: 15vw;
   }
   .popup__form_request textarea {
     width: 355vw;
@@ -680,7 +680,7 @@ div {
     font-size: 3rem;
   }
   .popup__send {
-    width: 370vw;
+    width: 40vw;
     font-size: 8rem;
     background-color: #4caf50;
     color: red;
