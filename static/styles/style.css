@@ -247,7 +247,7 @@ div {
   display: flex;
 }
 .form__title {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
 }
 
@@ -732,6 +732,9 @@ div {
   .form__example-phone {
     font-size: 0.8rem;
     display: inline;
+  }
+  .form__title {
+    font-size: 1rem;
   }
 }
 
