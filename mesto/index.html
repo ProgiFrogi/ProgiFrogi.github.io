@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mesto</title>
+
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body class="page">
+    <header class="header">
+      <img
+        src="./images/logo/logo_light.svg"
+        alt="Mesto."
+        class="header__logo"
+      />
+    </header>
+    <!-- /.header -->
+
+    <main class="content">
+      <section class="profile">
+        <div class="profile__info">
+          <img
+            src="./images/profile-image.jpg"
+            alt="Фото профиля."
+            class="profile__image"
+          />
+          <div class="profile__text">
+            <div class="profile__name">
+              <h1 class="profile__name-text">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button" type="button"></button>
+            </div>
+            <!-- /.profile__name -->
+            <p class="profile__description">Исследователь океана</p>
+          </div>
+          <!-- /.profile__text -->
+        </div>
+        <!-- /.profile__info -->
+        <button class="profile__add-button" type="button"></button>
+      </section>
+      <!-- /.profile -->
+
+      <section class="cards">
+        <ul class="cards__list">
+          <!-- Card 1 -->
+          <li class="card">
+            <img
+              src="./images/photos/karachay-cherkessia.jpg"
+              alt="Карачаево-Черкесия."
+              class="card__image"
+            />
+            <div class="card__content">
+              <h2 class="card__heading">Карачаево-Черкесия</h2>
+              <button class="card__like-button" type="button"></button>
+            </div>
+            <!-- /.card__content -->
+          </li>
+
+          <!-- Card 2 -->
+          <li class="card">
+            <img
+              src="./images/photos/elbrus.jpg"
+              alt="Гора Эльбрус."
+              class="card__image"
+            />
+            <div class="card__content">
+              <h2 class="card__heading">Гора Эльбрус</h2>
+              <button class="card__like-button" type="button"></button>
+            </div>
+            <!-- /.card__content -->
+          </li>
+
+          <!-- Card 3 -->
+          <li class="card">
+            <img
+              src="./images/photos/dombay.jpg"
+              alt="Домбай"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h2 class="card__heading">Домбай</h2>
+              <button class="card__like-button" type="button"></button>
+            </div>
+            <!-- /.card__content -->
+          </li>
+
+          <!-- Card 4 -->
+          <li class="card">
+            <img
+              src="./images/photos/elbrus.jpg"
+              alt="Гора Эльбрус."
+              class="card__image"
+            />
+            <div class="card__content">
+              <h2 class="card__heading">Гора Эльбрус</h2>
+              <button class="card__like-button" type="button"></button>
+            </div>
+            <!-- /.card__content -->
+          </li>
+
+          <!-- Card 5 -->
+          <li class="card">
+            <img
+              src="./images/photos/dombay.jpg"
+              alt="Домбай"
+              class="card__image"
+            />
+            <div class="card__content">
+              <h2 class="card__heading">Домбай</h2>
+              <button class="card__like-button" type="button"></button>
+            </div>
+            <!-- /.card__content -->
+          </li>
+
+          <!-- Card 6 -->
+          <li class="card">
+            <img
+              src="./images/photos/karachay-cherkessia.jpg"
+              alt="Карачаево-Черкесия."
+              class="card__image"
+            />
+            <div class="card__content">
+              <h2 class="card__heading">Карачаево-Черкесия</h2>
+              <button class="card__like-button" type="button"></button>
+            </div>
+            <!-- /.card__content -->
+          </li>
+        </ul>
+        <!-- /.cards__list -->
+      </section>
+      <!-- /.cards -->
+    </main>
+
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+    </footer>
+    <!-- /.footer -->
+
+    <div class="popup">
+      <div class="popup__container">
+        <h2 class="popup__heading">Редактировать профиль</h2>
+        <form method="post" class="form" name="profile">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Имя"
+            class="form__input"
+            value="Жак-Ив Кусто"
+          />
+          <input
+            type="text"
+            name="about"
+            id="about"
+            placeholder="О себе"
+            class="form__input"
+            value="Исследователь океана"
+          />
+          <button type="submit" class="form__button">Сохранить</button>
+          <button type="button" class="popup__close-button"></button>
+        </form>
+      </div>
+      <!-- /.form -->
+    </div>
+    <!-- /.popup -->
+  </body>
+</html>
